@@ -1,0 +1,19 @@
+ private int toplamFiyat = 0; 
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int fiyat = Convert.ToInt32(textBox2.Text); 
+            toplamFiyat += fiyat; 
+            string urunBilgisi = $"{textBox1.Text} - {fiyat} TL"; 
+            listBox1.Items.Add(urunBilgisi); 
+            label3.Text = toplamFiyat.ToString(); 
+            textBox1.Clear();
+            textBox2.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Ödeme Tamamlandı. Toplam: {toplamFiyat} TL");
+            listBox1.Items.Clear();
+            toplamFiyat = 0; 
+        }
